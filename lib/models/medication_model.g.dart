@@ -18,7 +18,7 @@ class MedicationAdapter extends TypeAdapter<Medication> {
     };
     return Medication(
       name: fields[0] as String,
-      dose: fields[1] as String,
+      amount: fields[1] as String,
       time: fields[2] as String,
       isTaken: fields[3] as bool,
     );
@@ -31,7 +31,7 @@ class MedicationAdapter extends TypeAdapter<Medication> {
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
-      ..write(obj.dose)
+      ..write(obj.amount)
       ..writeByte(2)
       ..write(obj.time)
       ..writeByte(3)

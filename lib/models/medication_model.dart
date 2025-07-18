@@ -8,7 +8,7 @@ class Medication extends HiveObject {
   String name;
 
   @HiveField(1)
-  String dose;
+  String amount;
 
   @HiveField(2)
   String time;
@@ -18,7 +18,7 @@ class Medication extends HiveObject {
 
   Medication({
     required this.name,
-    required this.dose,
+    required this.amount,
     required this.time,
     this.isTaken = false,
   });

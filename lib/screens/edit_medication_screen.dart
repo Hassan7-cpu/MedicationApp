@@ -14,14 +14,14 @@ class EditMedicationScreen extends StatefulWidget {
 
 class _EditMedicationScreenState extends State<EditMedicationScreen> {
   final formKey = GlobalKey<FormState>();
-  late String name, dose, time;
+  late String name, amount, time;
   late bool isTaken;
 
   @override
   void initState() {
     super.initState();
     name = widget.medication.name;
-    dose = widget.medication.dose;
+    amount = widget.medication.amount;
     time = widget.medication.time;
     isTaken = widget.medication.isTaken;
   }
@@ -45,10 +45,10 @@ class _EditMedicationScreenState extends State<EditMedicationScreen> {
               ),
               SizedBox(height: 15.h),
               CustomTextFormFeild(
-                initialvalue: dose,
-                hinttext: 'dose',
+                initialvalue: amount,
+                hinttext: 'Amount',
                 onsaved: (value) {
-                  dose = value!;
+                  amount = value!;
                 },
               ),
               SizedBox(height: 15.h),
@@ -72,7 +72,7 @@ class _EditMedicationScreenState extends State<EditMedicationScreen> {
                     formKey.currentState!.save();
 
                     widget.medication.name = name;
-                    widget.medication.dose = dose;
+                    widget.medication.amount = amount;
                     widget.medication.time = time;
                     widget.medication.isTaken = isTaken;
                     widget.medication.save();

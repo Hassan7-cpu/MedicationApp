@@ -16,7 +16,7 @@ class AddMedicationScreen extends StatefulWidget {
 
 class _AddMedicationScreenState extends State<AddMedicationScreen> {
   final formKey = GlobalKey<FormState>();
-  String name = '', dose = '', time = '';
+  String name = '', amount = '', time = '';
   bool isTaken = false;
   @override
   Widget build(BuildContext context) {
@@ -36,9 +36,9 @@ class _AddMedicationScreenState extends State<AddMedicationScreen> {
               ),
               SizedBox(height: 15.h),
               CustomTextFormFeild(
-                hinttext: 'Dose',
+                hinttext: 'Amount',
                 onsaved: (value) {
-                  dose = value!;
+                  amount = value!;
                 },
               ),
               SizedBox(height: 15.h),
@@ -65,7 +65,7 @@ class _AddMedicationScreenState extends State<AddMedicationScreen> {
 
                     final newMed = Medication(
                       name: name,
-                      dose: dose,
+                      amount: amount,
                       time: time,
                       isTaken: isTaken,
                     );

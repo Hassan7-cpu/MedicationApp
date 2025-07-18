@@ -26,7 +26,9 @@ class _MedicationItemState extends State<MedicationItem> {
       margin: EdgeInsets.all(8.r),
       child: ListTile(
         title: Text(widget.medication.name),
-        subtitle: Text('${widget.medication.dose} • ${widget.medication.time}'),
+        subtitle: Text(
+          '${widget.medication.amount} • ${widget.medication.time}',
+        ),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
